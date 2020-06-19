@@ -1,0 +1,13 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+ <h>Titles</h>
+<ul>
+{% for title in titles %}
+    <li>
+ <a href="{% url 'blogs:title' title.id %}">{{ title }}</a>
+ </li>
+{% empty %}
+ <li>No topics have been added yet.</li>
+{% endfor %}
+</ul>
+{% endblock content %}
